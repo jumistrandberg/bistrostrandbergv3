@@ -571,33 +571,33 @@
 
   <!-- Client-side Validation -->
   <script>function validateForm() {
-    var name =  document.getElementById('name').value;
+    var name =  document.getElementById('Namn').value;
     if (name == "") {
-        document.querySelector('.status').innerHTML = "Name cannot be empty";
+        document.querySelector('.status').innerHTML = "Fyll i namn";
         return false;
     }
-    var email =  document.getElementById('email').value;
+    var email =  document.getElementById('Email').value;
     if (email == "") {
-        document.querySelector('.status').innerHTML = "Email cannot be empty";
+        document.querySelector('.status').innerHTML = "Fyll i email";
         return false;
     } else {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!re.test(email)){
-            document.querySelector('.status').innerHTML = "Email format invalid";
+            document.querySelector('.status').innerHTML = "använd giltligt email format";
             return false;
         }
     }
-    var subject =  document.getElementById('subject').value;
+    var subject =  document.getElementById('Ämne').value;
     if (subject == "") {
-        document.querySelector('.status').innerHTML = "Subject cannot be empty";
+        document.querySelector('.status').innerHTML = "Fyll i ämne";
         return false;
     }
-    var message =  document.getElementById('message').value;
+    var message =  document.getElementById('Meddelande').value;
     if (message == "") {
-        document.querySelector('.status').innerHTML = "Message cannot be empty";
+        document.querySelector('.status').innerHTML = "Meddelandet kan inte var tomt";
         return false;
     }
-    document.querySelector('.status').innerHTML = "Sending...";
+    document.querySelector('.status').innerHTML = "Skickar...";
   }</script>
 
 
