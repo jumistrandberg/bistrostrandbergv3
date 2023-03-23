@@ -399,13 +399,14 @@
                     
                     <!-- Disable Captcha -->
                     <input type="hidden" name="_captcha" value="false"> 
-
+                    <!--Success page link-->
+                    <input type="hidden" name="_next" value="https://jumistrandberg.github.io/bistrostrandbergv3/sucess.html">
                     <div class="row">
                         <!-- Grid column name-->
                         <div class="name-column col-md-6">
                             <div class="md-form mb-0">
                                 <label for="name" class="">Namn</label>
-                                <input type="text" id="name" name="namn" class="form-control" placeholder="för- och efternamn" required>
+                                <input type="text" id="name" name="Namn" class="form-control" placeholder="för- och efternamn" required>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -414,7 +415,7 @@
                         <div class="email-column col-md-6">
                             <div class="md-form mb-0">
                                 <label for="email" class="">Email</label>
-                                <input type="text" id="email" name="email" class="form-control" placeholder="din@email.com" required>
+                                <input type="text" id="email" name="Email" class="form-control" placeholder="din@email.com" required>
                             </div>
                         </div>
 
@@ -422,7 +423,7 @@
                         <div class="col-md-6">
                             <div class="tel-column md-form mb-0">
                                 <label for="tel" class="">Telefonnummer</label>
-                                <input type="text" id="tel" name="tel" class="form-control" placeholder="000 000 000 000" required>
+                                <input type="text" id="tel" name="Tel" class="form-control" placeholder="000 000 000 000" required>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -433,7 +434,7 @@
                         <div class="subject-column col-md-12">
                             <div class="md-form mb-0">
                                 <label for="subject" class="">Ämne</label>
-                                <input type="text" id="subject" name="ämne" class="form-control" placeholder="Ämne"required>
+                                <input type="text" id="subject" name="Ämne" class="form-control" placeholder="Ämne"required>
                             </div>
                         </div>
                     </div>
@@ -447,7 +448,7 @@
 
                             <div class="md-form">
                                 <label for="message">Meddelande</label>
-                                <textarea type="text" name="meddelande" id="message" rows="2"
+                                <textarea type="text" name="Meddelande" id="message" rows="2"
                                     class="form-control md-textarea"
                                     placeholder="När, var, hur många portioner..."></textarea required>
                             </div>
@@ -567,6 +568,37 @@
 
     <!-- JavaScript -->
     <script src="index.js"></script>
+
+  <!-- Client-side Validation -->
+  <script>function validateForm() {
+    var name =  document.getElementById('name').value;
+    if (name == "") {
+        document.querySelector('.status').innerHTML = "Name cannot be empty";
+        return false;
+    }
+    var email =  document.getElementById('email').value;
+    if (email == "") {
+        document.querySelector('.status').innerHTML = "Email cannot be empty";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(email)){
+            document.querySelector('.status').innerHTML = "Email format invalid";
+            return false;
+        }
+    }
+    var subject =  document.getElementById('subject').value;
+    if (subject == "") {
+        document.querySelector('.status').innerHTML = "Subject cannot be empty";
+        return false;
+    }
+    var message =  document.getElementById('message').value;
+    if (message == "") {
+        document.querySelector('.status').innerHTML = "Message cannot be empty";
+        return false;
+    }
+    document.querySelector('.status').innerHTML = "Sending...";
+  }</script>
 
 
 </body>
