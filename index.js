@@ -20,11 +20,11 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     // Check if required fields have been filled
-    const name = document.getElementById('Namn').value;
-    const email = document.getElementById('Email').value;
-    const tel = document.getElementById('Tel').value;
-    const subject = document.getElementById('Tel').value;
-    const message = document.getElementById('Meddelande').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const tel = document.getElementById('tel').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
 
     if (name === '' || email === '' || tel === '' || subject === '' || message === '') {
         // If any of the fields are empty, display:
